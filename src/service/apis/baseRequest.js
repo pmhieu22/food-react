@@ -1,7 +1,5 @@
 import axios from "axios";
-import { Navigate } from "react-router-dom";
-import { ACCESS_TOKEN } from "../../constants/auth.constant";
-import { clientRoute } from "../../constants/route.constant";
+
 // import { clearLocalStorage, readLocalStorage } from "../../helper/localStorage";
 
 let isRefreshing = false;
@@ -53,7 +51,6 @@ instance.interceptors.response.use(
   function (error) {
     let originalRequest = error.config;
     if (error.response.status === 401) {
-      return <Navigate to={clientRoute.LOGIN} />;
     }
     if (error.response.status === 500) {
     }
