@@ -1,7 +1,7 @@
 import foodActions from "./food/action";
 
 const useActions = () => {
-  return foodActions;
+  return { foodActions };
 };
 
 export default useActions;
